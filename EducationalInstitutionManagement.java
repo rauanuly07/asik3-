@@ -33,7 +33,7 @@ abstract class Person {
     public String toString() {
         return "Person{name='" + name + "', age=" + age + "}";
     }
-
+    //2
     public abstract String getMajor();
 
     public abstract String getSubject();
