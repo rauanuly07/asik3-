@@ -1,0 +1,33 @@
+-- Step 1: Connect to PostgreSQL as user postgres
+psql -U postgres
+
+-- Step 2: Create the database for educational management
+CREATE DATABASE education_db;
+
+-- Step 3: Connect to the newly created database
+\c education_db;
+
+-- Step 4: Create the table for storing persons (students and teachers)
+CREATE TABLE Person (
+    id SERIAL PRIMARY KEY, -- Unique ID for each person
+    name VARCHAR(100) NOT NULL, -- Person's name
+    age INT NOT NULL, -- Person's age
+    type VARCHAR(50) NOT NULL, -- Type of person (either 'Student' or 'Teacher')
+    major_or_subject VARCHAR(100) NOT NULL -- Major for students or subject for teachers
+);
+
+-- Step 5: Insert sample data for students and teachers
+
+-- Inserting Students
+INSERT INTO Person (name, age, type, major_or_subject)
+VALUES ('Alice', 20, 'Student', 'Computer Science');
+
+INSERT INTO Person (name, age, type, major_or_subject)
+VALUES ('Bob', 22, 'Student', 'Mathematics');
+
+-- Inserting Teachers
+INSERT INTO Person (name, age, type, major_or_subject)
+VALUES ('Dr. Smith', 45, 'Teacher', 'Mathematics');
+
+INSERT INTO Person (name, age, type, major_or_subject)
+VALUES ('Prof. Johnson', 50, 'Teacher', 'Computer Science');
